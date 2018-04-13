@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+simple_search/__init__.py
+simple_search/app.py
+simple_search/config.py
+simple_search.egg-info/PKG-INFO
+simple_search.egg-info/SOURCES.txt
+simple_search.egg-info/dependency_links.txt
+simple_search.egg-info/requires.txt
+simple_search.egg-info/top_level.txt
