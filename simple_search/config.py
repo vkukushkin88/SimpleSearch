@@ -16,4 +16,4 @@ class Config(object):
                   '[%(filename)s,%(lineno)d] -- %(message)s')
     LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'
 
-    WHOOSH_BASE = 'whoosh'
+    DATA_FILE_PATH = 'data/storage.st'

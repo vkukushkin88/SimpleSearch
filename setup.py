@@ -30,11 +30,7 @@ args = dict(
         'flask-sqlalchemy==2.3.2',
         'flask-restful==0.3.6',
         'SQLAlchemy==1.2.4',
-        'Whoosh==2.7.4',
     ],
-    dependency_links = [
-        'pip install git+git://github.com/miguelgrinberg/flask-whooshalchemy.git'
-    ]
 )
 
 setup(**args)

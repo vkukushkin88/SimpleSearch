@@ -3,9 +3,9 @@ import logging
 
 from flask import Flask
 
-from simple_search.db.models import db, TblTextContainer
 from simple_search.api.routes import search_api
-import flask_whooshalchemy as wa
+from simple_search.tools.file_storage import FileStorage
+from simple_search.tools.trie_index import TrieIndex
 
 
 def create_app():
@@ -21,13 +21,11 @@ def create_app():
         datefmt=app.config['LOG_DATEFMT']
     )
 
-    # setup db
-    db.init_app(app)
-    with app.app_context():
-        db.create_all()
-
-    # init index
-    wa.whoosh_index(app, TblTextContainer)
+    # init custom index
+    index = TrieIndex(app.config)
+    fs = FileStorage(index, app.config)
+    app.storage = fs
+    app.storage.reindexing()
 
     # initialize APIs
     search_api(app)

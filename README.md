@@ -3,7 +3,7 @@
 
 **Table of Contents**
  - [Installation steps](#installation-steps)
- - [short_description](#short-description)
+ - [Short description](#short-description)
 
 
 ## **Installation steps**
@@ -68,6 +68,23 @@ Open in browse `index.html` page and have fun!
 
 ## **Short Description**
 
- - Project is created as simple full text search engine based on Flask + Whoosh
- - User can add text messages to database and do search through them.
+ - Project is created as simple full text search engine based on Flask + Trie
+ - User can add text messages and do search through them.
+ 
+##### Start server
 
+```
+$ python wsgi.py
+```
+
+##### Add new record by curl
+
+```
+$ curl -X POST localhost:8080/add/ -H "Content-Type: application/json" -d '{"content": "Mario Party 4"}'
+```
+
+##### Do search by curl
+
+```
+$ curl localhost:8080/search/?query=mario%20party
+```
